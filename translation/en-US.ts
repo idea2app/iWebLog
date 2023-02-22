@@ -1,6 +1,20 @@
 import { IDType } from 'mobx-restful';
 
 export default {
+  before: 'before',
+  after: 'after',
+  Millisecond: 'Millisecond',
+  Second: 'Second',
+  Minute: 'Minute',
+  Hour: 'Hour',
+  Day: 'Day',
+  Week: 'Week',
+  Month: 'Month',
+  Year: 'Year',
+
+  sign_in: 'Sign In',
+  sign_out: 'Sign out',
+
   welcome_to: 'Welcome to',
   get_started_by_editing: 'Get started by editing',
   upstream_projects: 'Upstream projects',

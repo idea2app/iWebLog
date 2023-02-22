@@ -1,9 +1,9 @@
-# Next-Bootstrap.ts
+# iWebLog
 
-[React][1] project scaffold based on [TypeScript][2], [Next.js][3], [Bootstrap][4] & [Workbox][5]. And this project bootstrapped with [`create-next-app`][6].
+Light-weight **Personal Web App** (PWA) based on [Next.js][3], [MobX][9] & [Sequelize][6]
 
-[![NPM Dependency](https://david-dm.org/idea2app/next-bootstrap-ts.svg)][7]
-[![CI & CD](https://github.com/idea2app/Next-Bootstrap-ts/actions/workflows/main.yml/badge.svg)][8]
+[![NPM Dependency](https://david-dm.org/idea2app/iweblog.svg)][7]
+[![CI & CD](https://github.com/idea2app/iWebLog/actions/workflows/main.yml/badge.svg)][8]
 
 ## Technology stack
 
@@ -55,14 +55,18 @@ pnpm pack-image
 pnpm container
 ```
 
+## User cases
+
+1. https://father.tech-query.me/
+
 [1]: https://reactjs.org/
 [2]: https://www.typescriptlang.org/
 [3]: https://nextjs.org/
 [4]: https://getbootstrap.com/
 [5]: https://developers.google.com/web/tools/workbox
-[6]: https://github.com/vercel/next.js/tree/canary/packages/create-next-app
-[7]: https://david-dm.org/idea2app/next-bootstrap-ts
-[8]: https://github.com/idea2app/Next-Bootstrap-ts/actions/workflows/main.yml
+[6]: https://sequelize.org/
+[7]: https://david-dm.org/idea2app/iweblog
+[8]: https://github.com/idea2app/iWebLog/actions/workflows/main.yml
 [9]: https://github.com/mobxjs/mobx/tree/mobx4and5/docs
 [11]: https://github.com/features/actions
 [12]: https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme

@@ -4,8 +4,8 @@ networks:
   idea2app:
 
 services:
-  next-bootstrap-ts:
-    image: idea2app/next-bootstrap-ts
+  web-log:
+    image: idea2app/web-log
     environment:
       - NODE_ENV=production
       - PORT=3000
@@ -15,11 +15,11 @@ services:
       - idea2app
   caddy:
     depends_on:
-      - next-bootstrap-ts
+      - web-log
     image: caddy
     ports:
       - 80:80
       - 443:443
     networks:
       - idea2app
-    command: caddy reverse-proxy --from your.domain.com --to next-bootstrap-ts:3000
+    command: caddy reverse-proxy --from your.domain.com --to web-log:3000

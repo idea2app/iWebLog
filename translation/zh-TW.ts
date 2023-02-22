@@ -1,6 +1,20 @@
 import { IDType } from 'mobx-restful';
 
 export default {
+  before: '前',
+  after: '後',
+  Millisecond: '毫秒',
+  Second: '秒',
+  Minute: '分',
+  Hour: '時',
+  Day: '天',
+  Week: '周',
+  Month: '月',
+  Year: '年',
+
+  sign_in: '登錄',
+  sign_out: '退出',
+
   welcome_to: '歡迎使用',
   get_started_by_editing: '開始你的專案吧，編輯',
   upstream_projects: '上游專案',

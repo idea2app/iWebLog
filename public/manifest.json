@@ -1,8 +1,8 @@
 {
-  "name": "Next-Bootstrap.ts scaffold",
-  "short_name": "Next.ts demo",
+  "name": "iWebLog",
+  "short_name": "iWebLog",
   "start_url": ".",
-  "description": "React project scaffold based on TypeScript, Next.js, Bootstrap & Workbox.",
+  "description": "Light-weight Personal Web App (PWA) based on Next.js, MobX & Sequelize",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",
@@ -12,9 +12,9 @@
   "background_color": "transparent",
   "icons": [
     {
-      "src": "typescript.png",
+      "src": "https://github.com/idea2app.png",
       "type": "image/png",
-      "sizes": "280x280"
+      "sizes": "200x200"
     }
   ]
 }
