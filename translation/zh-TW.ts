@@ -1,6 +1,28 @@
 import { IDType } from 'mobx-restful';
 
 export default {
+  before: '前',
+  after: '後',
+  millisecond: '毫秒',
+  second: '秒',
+  minute: '分',
+  hour: '時',
+  day: '天',
+  week: '周',
+  month: '月',
+  year: '年',
+
+  sign_in: '登錄',
+  sign_out: '退出',
+
+  write: '寫作',
+  comment: '評論',
+  post: '發言',
+  has_x_comments: ({ totalCount }: { totalCount: number }) =>
+    `已有 ${totalCount} 條評論`,
+  reply: '回復',
+  quote: '引用',
+
   welcome_to: '歡迎使用',
   get_started_by_editing: '開始你的專案吧，編輯',
   upstream_projects: '上游專案',

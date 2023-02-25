@@ -1,6 +1,28 @@
 import { IDType } from 'mobx-restful';
 
 export default {
+  before: 'before',
+  after: 'after',
+  millisecond: 'millisecond',
+  second: 'second',
+  minute: 'minute',
+  hour: 'hour',
+  day: 'day',
+  week: 'week',
+  month: 'month',
+  year: 'year',
+
+  sign_in: 'Sign In',
+  sign_out: 'Sign out',
+
+  write: 'Write',
+  comment: 'Comment',
+  post: 'Post',
+  has_x_comments: ({ totalCount }: { totalCount: number }) =>
+    `Total ${totalCount} comments`,
+  reply: 'Reply',
+  quote: 'Quote',
+
   welcome_to: 'Welcome to',
   get_started_by_editing: 'Get started by editing',
   upstream_projects: 'Upstream projects',

@@ -1,78 +1,41 @@
 import { observer } from 'mobx-react';
-import { Card,Col, Container, Row } from 'react-bootstrap';
+import { InferGetServerSidePropsType } from 'next';
+import { FC } from 'react';
+import { Button, Container } from 'react-bootstrap';
 
-import { GitCard } from '../components/Git/Card';
+import { ArticleList } from '../components/Article/List';
 import { PageHead } from '../components/PageHead';
+import { SessionBox } from '../components/SessionBox';
+import articleStore, { ArticleModel } from '../models/Article';
 import { i18n } from '../models/Translation';
-import styles from '../styles/Home.module.less';
-import { withTranslation } from './api/core';
-import { framework, mainNav } from './api/home';
+import { Role } from '../service/type';
+import { withErrorLog, withTranslation } from './api/core';
 
-export const getServerSideProps = withTranslation();
+export const getServerSideProps = withErrorLog(
+  withTranslation(async () => {
+    const articles = await new ArticleModel().getList();
 
-const HomePage = observer(() => {
-  const { t } = i18n;
+    return { props: { articles } };
+  }),
+);
 
-  return (
-    <>
+const { t } = i18n;
+
+const HomePage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
+  observer(({ articles }) => (
+    <Container as="main" className="py-3">
       <PageHead />
 
-      <Container as="main" className={styles.main}>
-        <h1 className={`m-0 text-center ${styles.title}`}>
-          {t('welcome_to')}
-          <a className="text-primary mx-2" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <header className="d-flex">
+        <SessionBox className="ms-auto" roles={[Role.Editor]}>
+          <Button size="sm" href="/article/0/editor">
+            {t('write')}
+          </Button>
+        </SessionBox>
+      </header>
 
-        <p className={`text-center fs-4 ${styles.description}`}>
-          {t('get_started_by_editing')}
-          <code className={`mx-2 rounded-3 bg-light ${styles.code}`}>
-            pages/index.tsx
-          </code>
-        </p>
-
-        <Row className="g-4" xs={1} sm={2} md={4}>
-          {mainNav().map(({ link, title, summary }) => (
-            <Col key={link}>
-              <Card
-                className={`h-100 p-4 rounded-3 border ${styles.card}`}
-                tabIndex={-1}
-              >
-                <Card.Body>
-                  <Card.Title as="h2" className="fs-4 mb-3">
-                    <a href={link} className="stretched-link">
-                      {title} &rarr;
-                    </a>
-                  </Card.Title>
-                  <Card.Text className="fs-5">{summary}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-
-        <h2 className="my-4 text-center">{t('upstream_projects')}</h2>
-        <Row className="g-4" xs={1} sm={2} md={3}>
-          {framework.map(
-            ({ title, languages, tags, summary, link, repository }) => (
-              <Col key={title}>
-                <GitCard
-                  className={`h-100 ${styles.card}`}
-                  full_name={title}
-                  html_url={repository}
-                  homepage={link}
-                  languages={languages}
-                  topics={tags}
-                  description={summary}
-                />
-              </Col>
-            ),
-          )}
-        </Row>
-      </Container>
-    </>
-  );
-});
+      <ArticleList store={articleStore} defaultData={articles} />
+    </Container>
+  ));
 
 export default HomePage;
