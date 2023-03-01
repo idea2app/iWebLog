@@ -23,6 +23,15 @@ export default {
   reply: '回复',
   quote: '引用',
 
+  title: '标题',
+  image: '图片',
+  author: '作者',
+  location: '地点',
+  origin: '原始出处（网址或书刊页码）',
+  tags: '标签（多个由空格分隔）',
+  summary: '摘要',
+  content: '正文',
+
   welcome_to: '欢迎使用',
   get_started_by_editing: '开始你的项目吧，编辑',
   upstream_projects: '上游项目',

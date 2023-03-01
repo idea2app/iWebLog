@@ -55,6 +55,17 @@ export class UserModel extends TableModel<User> {
 
     localStorage.clear();
   }
+
+  @toggle('uploading')
+  async upload(file: File) {
+    const form = new FormData();
+
+    form.append('data', file);
+
+    const { body } = await this.client.post<{ path: string }>('file', form);
+
+    return body!.path;
+  }
 }
 
 export default new UserModel();
