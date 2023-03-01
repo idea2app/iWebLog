@@ -101,6 +101,7 @@ class ArticleEditor extends PureComponent<{ id: number }> {
         <FormField
           label={t('image')}
           type="file"
+          accept="image/*"
           name="image"
           defaultValue={image}
         />

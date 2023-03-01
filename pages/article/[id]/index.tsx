@@ -50,8 +50,11 @@ const ArticleDetailPage: FC<
 
       <PageHead title={title} />
 
-      <Image fluid src={image} />
-
+      <Image
+        className="w-100 object-fit-cover"
+        style={{ height: '50vh' }}
+        src={image}
+      />
       <h1 className="d-flex justify-content-between align-items-center">
         {title}
         <SessionBox roles={[Role.Editor]}>

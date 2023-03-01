@@ -35,7 +35,10 @@ export default safeAPI(async (request, response) => {
   const { error, data } = await storage.upload(
     publicPath,
     await promises.readFile(filepath),
-    { contentType: mimetype || undefined },
+    {
+      contentType: mimetype || undefined,
+      upsert: true,
+    },
   );
   if (error) throw new URIError(error.message);
 
