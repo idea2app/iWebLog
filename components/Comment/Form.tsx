@@ -35,7 +35,7 @@ export class CommentForm extends PureComponent<CommentFormProps> {
     const { uploading } = store;
 
     return (
-      <Form className={`row ${className}`} onSubmit={this.handleSubmit}>
+      <Form className={`row g-3 ${className}`} onSubmit={this.handleSubmit}>
         <Col xs={12} sm={10}>
           <FloatingLabel controlId="content" label={t('comment')}>
             <Form.Control
@@ -46,13 +46,15 @@ export class CommentForm extends PureComponent<CommentFormProps> {
             />
           </FloatingLabel>
         </Col>
-        <SpinnerButton
-          className="col-12 col-sm-2"
-          type="submit"
-          loading={uploading > 0}
-        >
-          {t('post')}
-        </SpinnerButton>
+        <Col xs={12} sm={2}>
+          <SpinnerButton
+            className="w-100 h-100"
+            type="submit"
+            loading={uploading > 0}
+          >
+            {t('post')}
+          </SpinnerButton>
+        </Col>
       </Form>
     );
   }

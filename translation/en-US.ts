@@ -23,6 +23,15 @@ export default {
   reply: 'Reply',
   quote: 'Quote',
 
+  title: 'Title',
+  image: 'Image',
+  author: 'Author',
+  location: 'Location',
+  origin: 'Origin (URL or Book page index',
+  tags: 'Tags (split with Space characters)',
+  summary: 'Summary',
+  content: 'Content',
+
   welcome_to: 'Welcome to',
   get_started_by_editing: 'Get started by editing',
   upstream_projects: 'Upstream projects',

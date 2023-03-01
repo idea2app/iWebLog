@@ -1,5 +1,6 @@
 import '../styles/globals.less';
 
+import { HTTPError } from 'koajax';
 import { observer, useStaticRendering } from 'mobx-react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -11,6 +12,14 @@ import { i18n } from '../models/Translation';
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 useStaticRendering(isServer());
+
+globalThis.addEventListener?.('unhandledrejection', ({ reason }) => {
+  var { message, statusText } = reason as HTTPError;
+
+  message = statusText || message;
+
+  if (message) alert(message);
+});
 
 const AppShell = observer(({ Component, pageProps }: AppProps) => {
   const { t } = i18n;
