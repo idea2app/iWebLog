@@ -7,10 +7,10 @@ Light-weight **Personal Web App** (PWA) based on [Next.js][3], [MobX][9] & [Sequ
 
 ## Technology stack
 
-- Language: [TypeScript v4][2]
+- Language: [TypeScript v5][2]
 - Component engine: [Nextjs v12][3]
 - Component suite: [Bootstrap v5][4]
-- PWA framework: [Workbox v6][5]
+- PWA framework: [Workbox v7][5]
 - State management: [MobX][9]
 - CI / CD: GitHub [Actions][11] + [Vercel][12]
 

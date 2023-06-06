@@ -1,9 +1,10 @@
 import { observer } from 'mobx-react';
+import { ScrollList } from 'mobx-restful-table';
 import { InferGetServerSidePropsType } from 'next';
 import { FC } from 'react';
 import { Button, Container } from 'react-bootstrap';
 
-import { ArticleList } from '../components/Article/List';
+import { ArticleListLayout } from '../components/Article/List';
 import { PageHead } from '../components/PageHead';
 import { SessionBox } from '../components/SessionBox';
 import articleStore, { ArticleModel } from '../models/Article';
@@ -34,7 +35,12 @@ const HomePage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
         </SessionBox>
       </header>
 
-      <ArticleList store={articleStore} defaultData={articles} />
+      <ScrollList
+        translator={i18n}
+        store={articleStore}
+        renderList={allItems => <ArticleListLayout data={allItems} />}
+        defaultData={articles}
+      />
     </Container>
   ));
 
