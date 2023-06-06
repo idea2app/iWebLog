@@ -8,10 +8,10 @@ import { verifyJWT } from './user/session/authing';
 
 const form = new IncomingForm(),
   supabase = createClient(
-    process.env.SUPABASE_HOST!,
-    process.env.SUPABASE_TOKEN!,
+    process.env.SUPABASE_APP_HOST!,
+    process.env.SUPABASE_APP_TOKEN!,
   );
-const storage = supabase.storage.from(process.env.SUPABASE_BUCKET!);
+const storage = supabase.storage.from(process.env.SUPABASE_FILE_BUCKET!);
 
 export const config = {
   api: { bodyParser: false },
@@ -35,10 +35,7 @@ export default safeAPI(async (request, response) => {
   const { error, data } = await storage.upload(
     publicPath,
     await promises.readFile(filepath),
-    {
-      contentType: mimetype || undefined,
-      upsert: true,
-    },
+    { contentType: mimetype || undefined },
   );
   if (error) throw new URIError(error.message);
 

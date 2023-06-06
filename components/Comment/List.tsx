@@ -1,12 +1,10 @@
 import { observer } from 'mobx-react';
-import { Filter } from 'mobx-restful';
-import { ScrollListProps } from 'mobx-restful-table';
+import { ScrollList, ScrollListProps } from 'mobx-restful-table';
 import { FC } from 'react';
 
 import { CommentModel } from '../../models/Comment';
 import { i18n } from '../../models/Translation';
 import { CommentData } from '../../service/Comment/entity';
-import { XScrollList } from '../ScrollList';
 import { CommentCard } from './Card';
 import { CommentForm } from './Form';
 
@@ -31,39 +29,27 @@ export const CommentListLayout: FC<CommentListLayoutProps> = ({
   </ol>
 );
 
-export interface CommentListProps
-  extends Omit<CommentListLayoutProps, 'data'>,
-    ScrollListProps<CommentData> {
-  store: CommentModel;
-  filter?: Filter<CommentData>;
-}
+export type CommentListProps = Omit<CommentListLayoutProps, 'data'> &
+  Pick<ScrollListProps<CommentData>, 'className' | 'filter'>;
 
 const { t } = i18n;
 
-@observer
-export class CommentList extends XScrollList<CommentListProps> {
-  store = this.props.store;
-  filter = this.props.filter || {};
+export const CommentList: FC<CommentListProps> = observer(
+  ({ store, filter }) => (
+    <>
+      <CommentForm store={store} />
 
-  constructor(props: CommentListProps) {
-    super(props);
+      <aside className="p-3 text-center">
+        {t('has_x_comments', { totalCount: store.totalCount })}
+      </aside>
 
-    this.boot();
-  }
-
-  renderList() {
-    const { store } = this;
-    const { totalCount, allItems } = store;
-
-    return (
-      <>
-        <CommentForm store={store} />
-
-        <aside className="p-3 text-center">
-          {t('has_x_comments', { totalCount })}
-        </aside>
-        <CommentListLayout store={store} data={allItems} />
-      </>
-    );
-  }
-}
+      <ScrollList
+        translator={i18n}
+        {...{ store, filter }}
+        renderList={allItems => (
+          <CommentListLayout store={store} data={allItems} />
+        )}
+      />
+    </>
+  ),
+);

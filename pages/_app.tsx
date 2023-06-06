@@ -14,9 +14,9 @@ import { i18n } from '../models/Translation';
 useStaticRendering(isServer());
 
 globalThis.addEventListener?.('unhandledrejection', ({ reason }) => {
-  var { message, statusText } = reason as HTTPError;
+  var { message, statusText, body } = reason as HTTPError;
 
-  message = statusText || message;
+  message = body.message || statusText || message;
 
   if (message) alert(message);
 });
