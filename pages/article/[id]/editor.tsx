@@ -4,6 +4,7 @@ import { DataObject } from 'mobx-restful';
 import { FormField } from 'mobx-restful-table';
 import { InferGetServerSidePropsType } from 'next';
 import dynamic from 'next/dynamic';
+import { compose, RouteProps, router, translator } from 'next-ssr-middleware';
 import { FormEvent, PureComponent } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import { formToJSON } from 'web-utility';
@@ -15,7 +16,6 @@ import { i18n } from '../../../models/Translation';
 import userStore from '../../../models/User';
 import { ArticleData } from '../../../service/Article/entity';
 import { Role } from '../../../service/type';
-import { withRoute, withTranslation } from '../../api/core';
 
 const BlockEditor = dynamic(() => import('../../../components/BlockEditor'), {
   ssr: false,
@@ -28,7 +28,10 @@ interface ArticleInput
   image?: File;
 }
 
-export const getServerSideProps = withRoute(withTranslation());
+export const getServerSideProps = compose<
+  { id: string },
+  RouteProps<{ id: string }>
+>(router, translator(i18n));
 
 export default function ArticleEditorPage({
   route: { params },
@@ -140,9 +143,11 @@ class ArticleEditor extends PureComponent<{ id: number }> {
         <Form.Group>
           <Form.Label>{t('content')}</Form.Label>
           {id ? (
-            content && <BlockEditor name="content" defaultValue={content} />
+            content && (
+              <BlockEditor name="content" defaultValue={JSON.parse(content)} />
+            )
           ) : (
-            <BlockEditor name="content" defaultValue="{}" />
+            <BlockEditor name="content" />
           )}
         </Form.Group>
 

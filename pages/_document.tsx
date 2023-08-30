@@ -4,22 +4,18 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link rel="icon" href="https://tech-query.me/image/WebCell-0.png" />
+        <link rel="icon" href="/favicon.ico" />
 
         <link rel="manifest" href="/manifest.json" />
-        <script src="https://polyfill.kaiyuanshe.cn/feature/PWAManifest.js"></script>
+        <script src="https://polyfill.web-cell.dev/feature/PWAManifest.js" />
 
         <link
           rel="stylesheet"
-          href="https://unpkg.com/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          href="https://unpkg.com/bootstrap@5.3.1/dist/css/bootstrap.min.css"
         />
         <link
           rel="stylesheet"
-          href="https://unpkg.com/idea-react@0.27.11/dist/index.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+          href="https://unpkg.com/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
         />
       </Head>
 

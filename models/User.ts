@@ -1,6 +1,6 @@
 import { Guard } from '@authing/guard';
 import { HTTPClient, HTTPError, request } from 'koajax';
-import { observable } from 'mobx';
+import { makeObservable, observable } from 'mobx';
 import { toggle } from 'mobx-restful';
 
 import { User } from '../service/User/entity';
@@ -14,6 +14,11 @@ export const guard = new Guard({
 });
 
 export class UserModel extends TableModel<User> {
+  constructor() {
+    super();
+    makeObservable(this);
+  }
+
   baseURI = 'user';
 
   @observable

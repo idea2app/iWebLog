@@ -1,5 +1,5 @@
 import { Avatar, TimeDistance } from 'idea-react';
-import { observable } from 'mobx';
+import { makeObservable, observable } from 'mobx';
 import { observer } from 'mobx-react';
 import { PureComponent } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
@@ -19,6 +19,11 @@ const { t } = i18n;
 
 @observer
 export class CommentCard extends PureComponent<CommentCardProps> {
+  constructor(props: CommentCardProps) {
+    super(props);
+    makeObservable(this);
+  }
+
   @observable
   openForm = false;
 

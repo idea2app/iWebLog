@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { Fields, File, Files, IncomingForm } from 'formidable';
+import { Fields, Files, IncomingForm } from 'formidable';
 import { promises } from 'fs';
 
 import { Role } from '../../service/type';
@@ -28,11 +28,11 @@ export default safeAPI(async (request, response) => {
         error ? reject(error) : resolve({ fields, files }),
       ),
   );
-  const { originalFilename, filepath, mimetype } = files.data as File;
+  const [{ originalFilename, filepath, mimetype }] = files.data || [];
 
   const publicPath = `${mobilePhone}/${originalFilename}`;
 
-  const { error, data } = await storage.upload(
+  const { error } = await storage.upload(
     publicPath,
     await promises.readFile(filepath),
     { contentType: mimetype || undefined },

@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import { ScrollList } from 'mobx-restful-table';
 import { InferGetServerSidePropsType } from 'next';
+import { compose, errorLogger, translator } from 'next-ssr-middleware';
 import { FC } from 'react';
 import { Button, Container } from 'react-bootstrap';
 
@@ -10,14 +11,15 @@ import { SessionBox } from '../components/SessionBox';
 import articleStore, { ArticleModel } from '../models/Article';
 import { i18n } from '../models/Translation';
 import { Role } from '../service/type';
-import { withErrorLog, withTranslation } from './api/core';
 
-export const getServerSideProps = withErrorLog(
-  withTranslation(async () => {
+export const getServerSideProps = compose(
+  errorLogger,
+  translator(i18n),
+  async () => {
     const articles = await new ArticleModel().getList();
 
     return { props: { articles } };
-  }),
+  },
 );
 
 const { t } = i18n;

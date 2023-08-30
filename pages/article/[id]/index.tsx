@@ -2,6 +2,7 @@ import { EditorHTML, text2color } from 'idea-react';
 import { observer } from 'mobx-react';
 import { InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
+import { compose, errorLogger, translator } from 'next-ssr-middleware';
 import { FC } from 'react';
 import { Badge, Button, Container, Image } from 'react-bootstrap';
 
@@ -13,14 +14,15 @@ import { CommentModel } from '../../../models/Comment';
 import { i18n } from '../../../models/Translation';
 import { ArticleData } from '../../../service/Article/entity';
 import { Role } from '../../../service/type';
-import { withErrorLog, withTranslation } from '../../api/core';
 
-export const getServerSideProps = withErrorLog<{ id: string }, ArticleData>(
-  withTranslation(async ({ params }) => {
+export const getServerSideProps = compose<{ id: string }, ArticleData>(
+  errorLogger,
+  translator(i18n),
+  async ({ params }) => {
     const articleStore = new ArticleModel();
 
     return { props: await articleStore.getOne(+params!.id) };
-  }),
+  },
 );
 
 const { t } = i18n;
@@ -91,7 +93,7 @@ const ArticleDetailPage: FC<
       </ul>
       <blockquote>{summary}</blockquote>
 
-      <EditorHTML data={content} />
+      <EditorHTML data={JSON.parse(content)} />
 
       <CommentList className="py-3" store={new CommentModel(id)} />
     </Container>

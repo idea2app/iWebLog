@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import { makeObservable, observable } from 'mobx';
 
 import { ArticleData } from '../service/Article/entity';
 import { TableModel } from './Base';
@@ -6,11 +6,16 @@ import { CommentModel } from './Comment';
 import userStore from './User';
 
 export class ArticleModel extends TableModel<ArticleData> {
+  constructor() {
+    super();
+    makeObservable(this);
+  }
+
   client = userStore.client;
   baseURI = 'article';
 
   @observable
-  currentComment?: CommentModel;
+  currentComment?: CommentModel = undefined;
 
   async getOne(id: number) {
     const article = await super.getOne(id);
