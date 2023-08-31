@@ -2,7 +2,7 @@ import { computed } from 'mobx';
 import { observer } from 'mobx-react';
 import { observePropsState } from 'mobx-react-helper';
 import Head from 'next/head';
-import { Component, MouseEvent, PropsWithChildren, PureComponent } from 'react';
+import { Component, MouseEvent, PropsWithChildren } from 'react';
 
 import userStore, { guard } from '../models/User';
 import { Role } from '../service/type';
@@ -15,7 +15,7 @@ export type SessionBoxProps = PropsWithChildren<{
 
 @observer
 @observePropsState
-export class SessionBox extends Component<SessionBoxProps> {
+export default class SessionBox extends Component<SessionBoxProps> {
   declare observedProps: SessionBoxProps;
 
   @computed
@@ -72,7 +72,7 @@ export class SessionBox extends Component<SessionBoxProps> {
         <Head>
           <link
             rel="stylesheet"
-            href="https://cdn.authing.co/packages/guard/5.1.2/guard.min.css"
+            href="https://cdn.authing.co/packages/guard/5.2.0/guard.min.css"
           />
         </Head>
         <div

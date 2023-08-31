@@ -10,12 +10,16 @@ import { Container, Form } from 'react-bootstrap';
 import { formToJSON } from 'web-utility';
 
 import { PageHead } from '../../../components/PageHead';
-import { SessionBox } from '../../../components/SessionBox';
 import articleStore from '../../../models/Article';
 import { i18n } from '../../../models/Translation';
 import userStore from '../../../models/User';
 import { ArticleData } from '../../../service/Article/entity';
 import { Role } from '../../../service/type';
+
+const SessionBox = dynamic(() => import('../../../components/SessionBox'), {
+  ssr: false,
+});
+SessionBox.displayName = 'SessionBox';
 
 const BlockEditor = dynamic(() => import('../../../components/BlockEditor'), {
   ssr: false,

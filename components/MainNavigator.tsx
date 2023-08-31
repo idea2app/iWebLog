@@ -1,57 +1,70 @@
 import { Option, Select } from 'idea-react';
 import { observer } from 'mobx-react';
+import dynamic from 'next/dynamic';
 import { FC } from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import {
+  Container,
+  ContainerProps,
+  Nav,
+  Navbar,
+  NavbarProps,
+} from 'react-bootstrap';
 
 import { i18n, LanguageName } from '../models/Translation';
-import { UserMenu } from './UserMenu';
+
+const UserMenu = dynamic(() => import('./UserMenu'), { ssr: false });
 
 const Name = process.env.NEXT_PUBLIC_SITE_NAME || '';
 
-export const MainNavigator: FC = observer(() => {
-  const { currentLanguage, t } = i18n;
+export type MainNavigatorProps = NavbarProps & Pick<ContainerProps, 'fluid'>;
 
-  return (
-    <Navbar
-      bg="primary"
-      variant="dark"
-      fixed="top"
-      expand="sm"
-      collapseOnSelect
-    >
-      <Container>
-        <Navbar.Brand href="/">{Name}</Navbar.Brand>
+export const MainNavigator: FC<MainNavigatorProps> = observer(
+  ({ fluid, ...props }) => {
+    const { currentLanguage, t } = i18n;
 
-        <Navbar.Toggle aria-controls="navbar-inner" />
+    return (
+      <Navbar
+        bg="primary"
+        variant="dark"
+        fixed="top"
+        expand="sm"
+        collapseOnSelect
+        {...props}
+      >
+        <Container fluid={fluid}>
+          <Navbar.Brand href="/">{Name}</Navbar.Brand>
 
-        <Navbar.Collapse id="navbar-inner">
-          <Nav className="me-auto">
-            <Nav.Link
-              target="_blank"
-              href="https://github.com/TechQuery/father-anthology"
-            >
-              {t('source_code')}
-            </Nav.Link>
-          </Nav>
+          <Navbar.Toggle aria-controls="navbar-inner" />
 
-          <div className="d-flex flex-column flex-sm-row gap-3">
-            <UserMenu />
+          <Navbar.Collapse id="navbar-inner">
+            <Nav className="me-auto">
+              <Nav.Link
+                target="_blank"
+                href="https://github.com/idea2app/iWebLog"
+              >
+                {t('source_code')}
+              </Nav.Link>
+            </Nav>
 
-            <Select
-              value={currentLanguage}
-              onChange={key =>
-                i18n.changeLanguage(key as typeof currentLanguage)
-              }
-            >
-              {Object.entries(LanguageName).map(([key, name]) => (
-                <Option key={key} value={key}>
-                  {name}
-                </Option>
-              ))}
-            </Select>
-          </div>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-});
+            <div className="d-flex flex-column flex-sm-row gap-3">
+              <UserMenu />
+
+              <Select
+                value={currentLanguage}
+                onChange={key =>
+                  i18n.changeLanguage(key as typeof currentLanguage)
+                }
+              >
+                {Object.entries(LanguageName).map(([key, name]) => (
+                  <Option key={key} value={key}>
+                    {name}
+                  </Option>
+                ))}
+              </Select>
+            </div>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  },
+);
