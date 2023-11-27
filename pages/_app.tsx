@@ -23,36 +23,34 @@ globalThis.addEventListener?.('unhandledrejection', ({ reason }) => {
   if (message) alert(message);
 });
 
-const AppShell = observer(({ Component, pageProps }: AppProps) => {
-  const { t } = i18n;
+const { t } = i18n;
 
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+const AppShell = observer(({ Component, pageProps }: AppProps) => (
+  <>
+    <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </Head>
 
-      <MainNavigator />
+    <MainNavigator />
 
-      <div className="mt-5 pt-2">
-        <Component {...pageProps} />
-      </div>
+    <div className="mt-5 pt-2">
+      <Component {...pageProps} />
+    </div>
 
-      <footer className="flex-fill d-flex justify-content-center align-items-center border-top py-4">
-        <a
-          className="flex-fill d-flex justify-content-center align-items-center"
-          href="https://vercel.com?utm_source=create-next-app&amp;utm_medium=default-template&amp;utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {t('powered_by')}
-          <span className="mx-2">
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </>
-  );
-});
+    <footer className="flex-fill d-flex justify-content-center align-items-center border-top py-4">
+      <a
+        className="flex-fill d-flex justify-content-center align-items-center"
+        href="https://vercel.com?utm_source=create-next-app&amp;utm_medium=default-template&amp;utm_campaign=create-next-app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t('powered_by')}
+        <span className="mx-2">
+          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+        </span>
+      </a>
+    </footer>
+  </>
+));
 
 export default AppShell;
