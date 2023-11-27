@@ -2,16 +2,18 @@
 
 Light-weight **Personal Web App** (PWA) based on [Next.js][3], [MobX][9] & [Sequelize][6]
 
-[![NPM Dependency](https://david-dm.org/idea2app/iweblog.svg)][7]
-[![CI & CD](https://github.com/idea2app/iWebLog/actions/workflows/main.yml/badge.svg)][8]
+[![CI & CD](https://github.com/idea2app/iWebLog/actions/workflows/main.yml/badge.svg)][7]
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][8]
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][9]
 
 ## Technology stack
 
 - Language: [TypeScript v5][2]
-- Component engine: [Nextjs v13][3]
+- Component engine: [Nextjs v14][3]
 - Component suite: [Bootstrap v5][4]
 - PWA framework: [Workbox v6][5]
-- State management: [MobX v6][9]
+- State management: [MobX v6][10]
 - CI / CD: GitHub [Actions][11] + [Vercel][12]
 
 ## Getting Started
@@ -65,9 +67,10 @@ pnpm container
 [4]: https://getbootstrap.com/
 [5]: https://developers.google.com/web/tools/workbox
 [6]: https://sequelize.org/
-[7]: https://david-dm.org/idea2app/iweblog
-[8]: https://github.com/idea2app/iWebLog/actions/workflows/main.yml
-[9]: https://github.com/mobxjs/mobx/tree/mobx4and5/docs
+[7]: https://github.com/idea2app/iWebLog/actions/workflows/main.yml
+[8]: https://codespaces.new/idea2app/iWebLog
+[9]: https://gitpod.io/?autostart=true#https://github.com/idea2app/iWebLog
+[10]: https://mobx.js.org/
 [11]: https://github.com/features/actions
 [12]: https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme
 [13]: https://nextjs.org/docs/api-routes/introduction
