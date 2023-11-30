@@ -33,8 +33,8 @@ dependencies:
     specifier: ^2.6.0
     version: 2.6.0
   '@supabase/supabase-js':
-    specifier: ^2.38.5
-    version: 2.38.5
+    specifier: ^2.39.0
+    version: 2.39.0
   editorjs-html:
     specifier: ^3.4.3
     version: 3.4.3
@@ -43,7 +43,7 @@ dependencies:
     version: 3.5.1
   idea-react:
     specifier: ^1.0.0-rc.30
-    version: 1.0.0-rc.30(@types/react@18.2.38)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+    version: 1.0.0-rc.30(@types/react@18.2.39)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
   jsonwebtoken:
     specifier: ^9.0.2
     version: 9.0.2
@@ -76,7 +76,7 @@ dependencies:
     version: 0.6.12(mobx@6.10.2)(typescript@5.3.2)
   mobx-restful-table:
     specifier: ^1.2.2
-    version: 1.2.2(@types/react@18.2.38)(mobx-i18n@0.4.2)(mobx-react@9.0.2)(mobx-restful@0.6.12)(mobx@6.10.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+    version: 1.2.2(@types/react@18.2.39)(mobx-i18n@0.4.2)(mobx-react@9.0.2)(mobx-restful@0.6.12)(mobx@6.10.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
   next:
     specifier: ^14.0.3
     version: 14.0.3(react-dom@18.2.0)(react@18.2.0)
@@ -100,7 +100,7 @@ dependencies:
     version: 18.2.0
   react-bootstrap:
     specifier: ^2.9.1
-    version: 2.9.1(@types/react@18.2.38)(react-dom@18.2.0)(react@18.2.0)
+    version: 2.9.1(@types/react@18.2.39)(react-dom@18.2.0)(react@18.2.0)
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
@@ -125,14 +125,14 @@ devDependencies:
     specifier: ^4.14.202
     version: 4.14.202
   '@types/node':
-    specifier: ^18.18.13
-    version: 18.18.13
+    specifier: ^18.18.14
+    version: 18.18.14
   '@types/pg':
     specifier: ^8.10.9
     version: 8.10.9
   '@types/react':
-    specifier: ^18.2.38
-    version: 18.2.38
+    specifier: ^18.2.39
+    version: 18.2.39
   eslint:
     specifier: ^8.54.0
     version: 8.54.0
@@ -159,7 +159,7 @@ devDependencies:
     version: 5.1.6
   ts-node:
     specifier: ^10.9.1
-    version: 10.9.1(@types/node@18.18.13)(typescript@5.3.2)
+    version: 10.9.1(@types/node@18.18.14)(typescript@5.3.2)
   typescript:
     specifier: ~5.3.2
     version: 5.3.2
@@ -1889,8 +1889,8 @@ packages:
       '@supabase/node-fetch': 2.6.15
     dev: false
 
-  /@supabase/supabase-js@2.38.5:
-    resolution: {integrity: sha512-QTXld3AfwAJgeOGyOKsCcT7AjC3jJxN02iHy299Fw+qKX0lJ1tVVhMGlga101C1stUCvgzjcypmMSGiZ2oeKsw==}
+  /@supabase/supabase-js@2.39.0:
+    resolution: {integrity: sha512-cYfnwWRW5rYBbPT/BNIejtRT9ULdD9PnIExQV28PZpqcqm3PLwS4f3pY7WGB01Da63VYdvktZPKuYvreqsj/Zg==}
     dependencies:
       '@supabase/functions-js': 2.1.5
       '@supabase/gotrue-js': 2.57.0
@@ -1958,14 +1958,14 @@ packages:
   /@types/formidable@3.4.5:
     resolution: {integrity: sha512-s7YPsNVfnsng5L8sKnG/Gbb2tiwwJTY1conOkJzTMRvJAlLFW1nEua+ADsJQu8N1c0oTHx9+d5nqg10WuT9gHQ==}
     dependencies:
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
     dev: true
 
   /@types/glob@7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
     dev: false
 
   /@types/json-schema@7.0.15:
@@ -1979,7 +1979,7 @@ packages:
   /@types/jsonwebtoken@9.0.5:
     resolution: {integrity: sha512-VRLSGzik+Unrup6BsouBeHsf4d1hOEgYWTm/7Nmw1sXoN1+tRly/Gy/po3yeahnP4jfnQWWAhQAqcNfH7ngOkA==}
     dependencies:
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
     dev: true
 
   /@types/lodash@4.14.202:
@@ -1994,15 +1994,15 @@ packages:
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
     dev: false
 
-  /@types/node@18.18.13:
-    resolution: {integrity: sha512-vXYZGRrSCreZmq1rEjMRLXJhiy8MrIeVasx+PCVlP414N7CJLHnMf+juVvjdprHyH+XRy3zKZLHeNueOpJCn0g==}
+  /@types/node@18.18.14:
+    resolution: {integrity: sha512-iSOeNeXYNYNLLOMDSVPvIFojclvMZ/HDY2dU17kUlcsOsSQETbWIslJbYLZgA+ox8g2XQwSHKTkght1a5X26lQ==}
     dependencies:
       undici-types: 5.26.5
 
   /@types/pg@8.10.9:
     resolution: {integrity: sha512-UksbANNE/f8w0wOMxVKKIrLCbEMV+oM1uKejmwXr39olg4xqcfBDbXxObJAt6XxHbDa4XTKOlUEcEltXDX+XLQ==}
     dependencies:
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
       pg-protocol: 1.6.0
       pg-types: 4.0.1
     dev: true
@@ -2017,11 +2017,11 @@ packages:
   /@types/react-transition-group@4.4.9:
     resolution: {integrity: sha512-ZVNmWumUIh5NhH8aMD9CR2hdW0fNuYInlocZHaZ+dgk/1K49j1w/HoAuK1ki+pgscQrOFRTlXeoURtuzEkV3dg==}
     dependencies:
-      '@types/react': 18.2.38
+      '@types/react': 18.2.39
     dev: false
 
-  /@types/react@18.2.38:
-    resolution: {integrity: sha512-cBBXHzuPtQK6wNthuVMV6IjHAFkdl/FOPFIlkd81/Cd1+IqkHu/A+w4g43kaQQoYHik/ruaQBDL72HyCy1vuMw==}
+  /@types/react@18.2.39:
+    resolution: {integrity: sha512-Oiw+ppED6IremMInLV4HXGbfbG6GyziY3kqAwJYOR0PNbkYDmLWQA3a95EhdSmamsvbkJN96ZNN+YD+fGjzSBA==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -2030,7 +2030,7 @@ packages:
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
     dev: false
 
   /@types/scheduler@0.16.8:
@@ -2051,7 +2051,7 @@ packages:
   /@types/websocket@1.0.10:
     resolution: {integrity: sha512-svjGZvPB7EzuYS94cI7a+qhwgGU1y89wUgjT6E2wVUfmAGIvRfT7obBvRtnhXCSsoMdlG4gBFGE7MfkIXZLoww==}
     dependencies:
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
     dev: false
 
   /@typescript-eslint/parser@6.13.0(eslint@8.54.0)(typescript@5.3.2):
@@ -3807,7 +3807,7 @@ packages:
     resolution: {integrity: sha512-gchesWBzyvGHRO9W8tzUWFDycow5gwjvFKfyV9FF32Y7F50yZMp7mP+T2mJIWFx49zicqyC4uefHM17o6xKIVQ==}
     dev: false
 
-  /idea-react@1.0.0-rc.30(@types/react@18.2.38)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+  /idea-react@1.0.0-rc.30(@types/react@18.2.39)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {integrity: sha512-xximq44YOCqs1vfttCEWsqTq6eekOMOogmDIhza42IfDdU9ln459ftex3UiLVhez8R5PY/TpAOrtOUaLa/iFtw==}
     peerDependencies:
       react: '>=16'
@@ -3826,7 +3826,7 @@ packages:
       mobx-react-helper: 0.2.7(mobx@6.10.2)(react@18.2.0)
       prismjs: 1.29.0
       react: 18.2.0
-      react-bootstrap: 2.9.1(@types/react@18.2.38)(react-dom@18.2.0)(react@18.2.0)
+      react-bootstrap: 2.9.1(@types/react@18.2.39)(react-dom@18.2.0)(react@18.2.0)
       react-dom: 18.2.0(react@18.2.0)
       react-editor-js: 2.1.0(@editorjs/editorjs@2.28.2)(@editorjs/paragraph@2.11.3)(react@18.2.0)
       react-element-to-jsx-string: 15.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -4162,7 +4162,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: false
@@ -4171,7 +4171,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
@@ -4739,7 +4739,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /mobx-restful-table@1.2.2(@types/react@18.2.38)(mobx-i18n@0.4.2)(mobx-react@9.0.2)(mobx-restful@0.6.12)(mobx@6.10.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+  /mobx-restful-table@1.2.2(@types/react@18.2.39)(mobx-i18n@0.4.2)(mobx-react@9.0.2)(mobx-restful@0.6.12)(mobx@6.10.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {integrity: sha512-y3QexwcSEQ8pF3cl0KQ2/lhSOoOphc+MUlki1/UHCeBFwvLLbEuHhUST7WU0I23LGjXC9pQtfqMJG/bvNOwtCg==}
     peerDependencies:
       mobx: '>=4'
@@ -4757,7 +4757,7 @@ packages:
       mobx-react-helper: 0.2.7(mobx@6.10.2)(react@18.2.0)
       mobx-restful: 0.6.12(mobx@6.10.2)(typescript@5.3.2)
       react: 18.2.0
-      react-bootstrap: 2.9.1(@types/react@18.2.38)(react-dom@18.2.0)(react@18.2.0)
+      react-bootstrap: 2.9.1(@types/react@18.2.39)(react-dom@18.2.0)(react@18.2.0)
       regenerator-runtime: 0.14.0
       web-utility: 4.1.3(typescript@5.3.2)
     transitivePeerDependencies:
@@ -5459,7 +5459,7 @@ packages:
       safe-buffer: 5.2.1
     dev: false
 
-  /react-bootstrap@2.9.1(@types/react@18.2.38)(react-dom@18.2.0)(react@18.2.0):
+  /react-bootstrap@2.9.1(@types/react@18.2.39)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-ezgmh/ARCYp18LbZEqPp0ppvy+ytCmycDORqc8vXSKYV3cer4VH7OReV8uMOoKXmYzivJTxgzGHalGrHamryHA==}
     peerDependencies:
       '@types/react': '>=16.14.8'
@@ -5472,7 +5472,7 @@ packages:
       '@babel/runtime': 7.23.4
       '@restart/hooks': 0.4.11(react@18.2.0)
       '@restart/ui': 1.6.6(react-dom@18.2.0)(react@18.2.0)
-      '@types/react': 18.2.38
+      '@types/react': 18.2.39
       '@types/react-transition-group': 4.4.9
       classnames: 2.3.2
       dom-helpers: 5.2.1
@@ -6302,7 +6302,7 @@ packages:
       typescript: 5.3.2
     dev: true
 
-  /ts-node@10.9.1(@types/node@18.18.13)(typescript@5.3.2):
+  /ts-node@10.9.1(@types/node@18.18.14)(typescript@5.3.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -6321,7 +6321,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
       acorn: 8.11.2
       acorn-walk: 8.3.0
       arg: 4.1.3
@@ -6435,7 +6435,7 @@ packages:
       react: '>=15.0.0'
     dependencies:
       '@babel/runtime': 7.23.4
-      '@types/react': 18.2.38
+      '@types/react': 18.2.39
       invariant: 2.2.4
       react: 18.2.0
       react-lifecycles-compat: 3.0.4
@@ -6688,7 +6688,7 @@ packages:
   /wkx@0.5.0:
     resolution: {integrity: sha512-Xng/d4Ichh8uN4l0FToV/258EjMGU9MGcA0HV2d9B/ZpZB3lqQm7nkOdZdm5GhKtLLhAE7PiVQwN4eN+2YJJUg==}
     dependencies:
-      '@types/node': 18.18.13
+      '@types/node': 18.18.14
     dev: false
 
   /workbox-background-sync@6.6.0:

@@ -23,5 +23,5 @@ export const init = (sequelize: Sequelize) =>
       avatar: { type: DataTypes.STRING, allowNull: true },
       roles: { type: DataTypes.JSON, allowNull: true },
     },
-    { sequelize },
+    { sequelize, modelName: 'User' },
   );

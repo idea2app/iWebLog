@@ -27,5 +27,5 @@ export const init = (sequelize: Sequelize) =>
       summary: { type: DataTypes.TEXT, allowNull: true },
       content: DataTypes.TEXT,
     },
-    { sequelize },
+    { sequelize, modelName: 'Article' },
   );

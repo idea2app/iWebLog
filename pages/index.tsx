@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import { ScrollList } from 'mobx-restful-table';
 import { InferGetServerSidePropsType } from 'next';
 import dynamic from 'next/dynamic';
-import { compose, errorLogger, translator } from 'next-ssr-middleware';
+import { cache, compose, errorLogger, translator } from 'next-ssr-middleware';
 import { FC } from 'react';
 import { Button, Container } from 'react-bootstrap';
 
@@ -18,6 +18,7 @@ const SessionBox = dynamic(() => import('../components/SessionBox'), {
   { t } = i18n;
 
 export const getServerSideProps = compose(
+  cache(),
   errorLogger,
   translator(i18n),
   async () => {

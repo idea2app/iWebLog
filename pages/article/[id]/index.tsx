@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 import { InferGetServerSidePropsType } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { compose, errorLogger, translator } from 'next-ssr-middleware';
+import { cache, compose, errorLogger, translator } from 'next-ssr-middleware';
 import { FC } from 'react';
 import { Badge, Button, Container, Image } from 'react-bootstrap';
 
@@ -21,6 +21,7 @@ const SessionBox = dynamic(() => import('../../../components/SessionBox'), {
   { t } = i18n;
 
 export const getServerSideProps = compose<{ id: string }, ArticleData>(
+  cache(),
   errorLogger,
   translator(i18n),
   async ({ params }) => {
@@ -49,7 +50,7 @@ const ArticleDetailPage: FC<
       <Head>
         <link
           rel="stylesheet"
-          href="https://unpkg.com/github-markdown-css@5.2.0/github-markdown.css"
+          href="https://unpkg.com/github-markdown-css@5.4.0/github-markdown.css"
         />
       </Head>
 

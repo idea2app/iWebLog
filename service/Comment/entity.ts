@@ -27,7 +27,7 @@ export const init = (sequelize: Sequelize) => {
       content: DataTypes.TEXT,
       parentId: { type: DataTypes.INTEGER, allowNull: true },
     },
-    { sequelize },
+    { sequelize, modelName: 'Comment' },
   );
   Comment.Poster = Comment.belongsTo(User, { as: 'poster' });
 };

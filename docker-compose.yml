@@ -6,11 +6,6 @@ networks:
 services:
   web-log:
     image: idea2app/web-log
-    environment:
-      - NODE_ENV=production
-      - PORT=3000
-    ports:
-      - 3000:3000
     networks:
       - idea2app
     healthcheck:

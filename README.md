@@ -1,6 +1,6 @@
 # iWebLog
 
-Light-weight **Personal Web App** (PWA) based on [Next.js][3], [MobX][9] & [Sequelize][6]
+Light-weight **Personal Web App** (PWA) based on [Next.js][3], [MobX][10] & [Sequelize][6]
 
 [![CI & CD](https://github.com/idea2app/iWebLog/actions/workflows/main.yml/badge.svg)][7]
 

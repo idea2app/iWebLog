@@ -1,5 +1,5 @@
-const withLess = require('next-with-less'),
-  setPWA = require('next-pwa');
+import withLess from 'next-with-less';
+import setPWA from 'next-pwa';
 
 const { NODE_ENV } = process.env,
   withPWA = setPWA({
@@ -12,4 +12,4 @@ const { NODE_ENV } = process.env,
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = withPWA(withLess({}));
+export default withPWA(withLess({}));
